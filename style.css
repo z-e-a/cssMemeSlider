@@ -1,0 +1,15 @@
+:root {
+    --bg-color: #25282a;
+    --dot-color: #71abfe;
+    --dot-active-color: #bcbdbe;
+    --width: 50vw;
+    --mems-cnt: 4;
+    --anim-spd: 0.5s;
+}
+
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: var(--dot-color);
+    font-size: 16px;
+}
