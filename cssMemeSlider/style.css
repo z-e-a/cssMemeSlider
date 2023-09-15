@@ -1,0 +1,277 @@
+:root {
+    --bg-color: #25282a;
+    --dot-color: #71abfe;
+    --dot-active-color: #bcbdbe;
+    --width: 50vw;
+    --mems-cnt: 4;
+    --anim-spd: 0.5s;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: var(--dot-color);
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1>a {
+    text-decoration: underline;
+    color: var(--dot-color);
+}
+
+h1>a:hover {
+    color: white;
+}
+
+h1>a:active {
+    color: var(--dot-active-color);
+}
+
+body > input{
+    display: none;
+}
+
+.slider {
+    margin: 1vh auto;
+    padding: 5vh;
+    width: var(--width);
+    display: grid;
+    grid-template-areas:
+        "slides slides"
+        "text dots";
+    gap: 2vw;
+    background-color: var(--bg-color);
+    align-items: center;
+    overflow: hidden;
+    border-radius: 3vmin;
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.2) inset;
+    transition: all var(--anim-spd) ease-in-out;
+}
+
+.slider-wrapper {
+    grid-area: slides;
+    width: var(--width);
+}
+
+.slides-content {
+    display: flex;
+}
+
+.slide {
+    width: var(--width);
+}
+
+.slide img {
+    object-fit: scale-down;
+    width: 100%;
+    height: 30vh;
+}
+
+.text {
+    grid-area: text;
+    overflow: hidden;
+}
+
+.text-wrapper {
+    display: flex;
+}
+
+.label {
+    color: white;
+}
+
+.dots {
+    grid-area: dots;
+    width: 10vw;
+    display: flex;
+    justify-content: space-evenly;
+    justify-self: end;
+    transition: all var(--anim-spd) ease-in-out;
+}
+
+.dots label {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    padding: 0.7rem;
+}
+
+.dot {
+    width: 0.7rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--dot-color);
+    background-color: var(--dot-color);
+}
+
+.dots label:hover>.dot {
+    border-color: white;
+}
+
+#mem1:not(:checked):hover~.slider .dots label:nth-child(1) .dot {
+    background-color: white;
+}
+
+#mem1:active~.slider .dots label:nth-child(1) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem1:checked~.slider .dots label:nth-child(1) .dot {
+    background-color: transparent;
+}
+
+#mem2:not(:checked):hover~.slider .dots label:nth-child(2) .dot {
+    background-color: white;
+}
+
+#mem2:active~.slider .dots label:nth-child(2) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem2:checked~.slider .dots label:nth-child(2) .dot {
+    background-color: transparent;
+}
+
+#mem3:not(:checked):hover~.slider .dots label:nth-child(3) .dot {
+    background-color: white;
+}
+
+#mem3:active~.slider .dots label:nth-child(3) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem3:checked~.slider .dots label:nth-child(3) .dot {
+    background-color: transparent;
+}
+
+
+#mem4:not(:checked):hover~.slider .dots label:nth-child(4) .dot {
+    background-color: white;
+}
+
+#mem4:active~.slider .dots label:nth-child(4) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem4:checked~.slider .dots label:nth-child(4) .dot {
+    background-color: transparent;
+}
+
+.dots label:active>.dot {
+    border-color: var(--dot-active-color);
+    background-color: var(--dot-active-color);
+}
+
+.dots label:active:hover>.dot {
+    border-color: var(--dot-active-color);
+    background-color: var(--dot-active-color);
+}
+
+#mem1:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(1), 
+#mem1:checked~.slider .text .text-wrapper .label:nth-of-type(1) {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
+}
+
+#mem1:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(1),
+#mem1:not(checked)~.slider .text .text-wrapper .label:nth-of-type(1) {
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
+}
+
+#mem2:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(2) ,
+#mem2:checked~.slider .text .text-wrapper .label:nth-of-type(2) {
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
+}
+
+#mem2:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(2),
+#mem2:not(checked)~.slider .text .text-wrapper .label:nth-of-type(2) {
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
+}
+
+#mem3:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(3),
+#mem3:checked~.slider .text .text-wrapper .label:nth-of-type(3) {
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
+}
+
+#mem3:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(3),
+#mem3:not(checked)~.slider .text .text-wrapper .label:nth-of-type(3) {
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
+}
+
+#mem4:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(4),
+#mem4:checked~.slider .text .text-wrapper .label:nth-of-type(4) {
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
+}
+
+#mem4:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(4),
+#mem4:not(checked)~.slider .text .text-wrapper .label:nth-of-type(4) {
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
+}
+
+@keyframes fadein {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    99% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .slider{
+        display: grid;
+        grid-template-areas:
+        "slides slides"
+        "dots dots"
+        "text text";
+        gap: 2vw;
+        background-color: var(--bg-color);
+        align-items: center;
+        overflow: hidden;
+        border-radius: 3vmin;
+        box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.2) inset;
+        justify-items: center;
+    }
+
+    .text-wrapper{
+        justify-items: center;
+    }
+
+    .dots {
+        justify-self: center;
+    }
+
+    .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+}
