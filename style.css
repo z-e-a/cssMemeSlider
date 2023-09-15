@@ -13,3 +13,20 @@ body{
     color: var(--dot-color);
     font-size: 16px;
 }
+
+h1{
+    text-align: center;
+}
+
+h1 > a{
+    text-decoration: underline;
+    color: var(--dot-color);
+}
+
+h1 > a:hover{
+    color: white;
+}
+
+h1 > a:active{
+    color: var(--dot-active-color);
+}
