@@ -7,38 +7,38 @@
     --anim-spd: 0.5s;
 }
 
-body{
+body {
     background-color: black;
     font-family: Arial, sans-serif;
     color: var(--dot-color);
     font-size: 16px;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-h1 > a{
+h1>a {
     text-decoration: underline;
     color: var(--dot-color);
 }
 
-h1 > a:hover{
+h1>a:hover {
     color: white;
 }
 
-h1 > a:active{
+h1>a:active {
     color: var(--dot-active-color);
 }
 
-.slider{
+.slider {
     margin: 1vh auto;
     padding: 5vh;
     width: var(--width);
     display: grid;
     grid-template-areas:
-    "slides slides"
-    "text dots";
+        "slides slides"
+        "text dots";
     gap: 2vw;
     background-color: var(--bg-color);
     align-items: center;
@@ -47,13 +47,13 @@ h1 > a:active{
     box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.2) inset;
 }
 
-.slider-wrapper{
+.slider-wrapper {
     grid-area: slides;
     width: var(--width);
     /* transition: all var(--anim-spd) ease-in-out; */
 }
 
-.slides-content{
+.slides-content {
     /* display: grid; */
     /* grid-template-columns: repeat(var(--mems-cnt), var(--width)); */
     /* transform: translateX(20vw); */
@@ -61,24 +61,24 @@ h1 > a:active{
     display: flex;
 }
 
-.slide{
+.slide {
     width: var(--width);
     display: flex;
     justify-content: center;
 }
 
-.slide img{
+.slide img {
     object-fit: scale-down;
     width: 100%;
     height: 30vh;
 }
 
-.text{
+.text {
     grid-area: text;
     overflow: hidden;
 }
 
-.text-wrapper{
+.text-wrapper {
     /* display: grid; */
     /* grid-template-columns: repeat(var(--mems-cnt), var(--width)); */
     /* transform: translateX(0vw); */
@@ -86,18 +86,18 @@ h1 > a:active{
     display: flex;
 }
 
-.label{
+.label {
     color: white;
 }
 
-.dots{
+.dots {
     grid-area: dots;
     width: 10vw;
     display: flex;
     justify-content: space-evenly;
 }
 
-.dots label{
+.dots label {
     display: flex;
     width: 1rem;
     height: 1rem;
@@ -105,21 +105,72 @@ h1 > a:active{
     padding: 0.7rem;
 }
 
-.dot{
-    /* padding: 0.3rem; */
+.dot {
     width: 0.7rem;
-    /* height: 0.7rem; */
     border-radius: 50%;
     border: 0.2rem solid var(--dot-color);
     background-color: var(--dot-color);
 }
 
-.dots label:hover > .dot{
+.dots label:hover>.dot {
     border-color: white;
 }
 
-.dots label:active > .dot{
+#mem1:not(:checked):hover~.slider .dots label:nth-child(1) .dot {
+    background-color: white;
+}
+
+#mem1:active~.slider .dots label:nth-child(1) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem1:checked~.slider .dots label:nth-child(1) .dot {
+    background-color: transparent;
+}
+
+#mem2:not(:checked):hover~.slider .dots label:nth-child(2) .dot {
+    background-color: white;
+}
+
+#mem2:active~.slider .dots label:nth-child(2) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem2:checked~.slider .dots label:nth-child(2) .dot {
+    background-color: transparent;
+}
+
+#mem3:not(:checked):hover~.slider .dots label:nth-child(3) .dot {
+    background-color: white;
+}
+
+#mem3:active~.slider .dots label:nth-child(3) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem3:checked~.slider .dots label:nth-child(3) .dot {
+    background-color: transparent;
+}
+
+
+#mem4:not(:checked):hover~.slider .dots label:nth-child(4) .dot {
+    background-color: white;
+}
+
+#mem4:active~.slider .dots label:nth-child(4) .dot {
+    background-color: var(--dot-active-color);
+}
+
+#mem4:checked~.slider .dots label:nth-child(4) .dot {
+    background-color: transparent;
+}
+
+.dots label:active>.dot {
     border-color: var(--dot-active-color);
     background-color: var(--dot-active-color);
 }
 
+.dots label:active:hover>.dot {
+    border-color: var(--dot-active-color);
+    background-color: var(--dot-active-color);
+}
