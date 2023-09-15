@@ -49,6 +49,7 @@ body > input{
     overflow: hidden;
     border-radius: 3vmin;
     box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.2) inset;
+    transition: all var(--anim-spd) ease-in-out;
 }
 
 .slider-wrapper {
@@ -89,6 +90,7 @@ body > input{
     display: flex;
     justify-content: space-evenly;
     justify-self: end;
+    transition: all var(--anim-spd) ease-in-out;
 }
 
 .dots label {
@@ -172,42 +174,42 @@ body > input{
 #mem1:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(1), 
 #mem1:checked~.slider .text .text-wrapper .label:nth-of-type(1) {
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    animation: 0.5s ease-in-out 0.5s 1 normal both fadein;
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
 }
 
 #mem1:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(1),
 #mem1:not(checked)~.slider .text .text-wrapper .label:nth-of-type(1) {
-    animation: 0.5s ease-in-out 0s 1 normal both fadeout;
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
 }
 
 #mem2:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(2) ,
 #mem2:checked~.slider .text .text-wrapper .label:nth-of-type(2) {
-    animation: 0.5s ease-in-out 0.5s 1 normal both fadein;
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
 }
 
 #mem2:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(2),
 #mem2:not(checked)~.slider .text .text-wrapper .label:nth-of-type(2) {
-    animation: 0.5s ease-in-out 0s 1 normal both fadeout;
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
 }
 
 #mem3:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(3),
 #mem3:checked~.slider .text .text-wrapper .label:nth-of-type(3) {
-    animation: 0.5s ease-in-out 0.5s 1 normal both fadein;
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
 }
 
 #mem3:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(3),
 #mem3:not(checked)~.slider .text .text-wrapper .label:nth-of-type(3) {
-    animation: 0.5s ease-in-out 0s 1 normal both fadeout;
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
 }
 
 #mem4:checked~.slider .slider-wrapper .slides-content .slide:nth-of-type(4),
 #mem4:checked~.slider .text .text-wrapper .label:nth-of-type(4) {
-    animation: 0.5s ease-in-out 0.5s 1 normal both fadein;
+    animation: var(--anim-spd) ease-in-out var(--anim-spd) 1 normal both fadein;
 }
 
 #mem4:not(checked)~.slider .slider-wrapper .slides-content .slide:nth-of-type(4),
 #mem4:not(checked)~.slider .text .text-wrapper .label:nth-of-type(4) {
-    animation: 0.5s ease-in-out 0s 1 normal both fadeout;
+    animation: var(--anim-spd) ease-in-out 0s 1 normal both fadeout;
 }
 
 @keyframes fadein {
@@ -240,5 +242,36 @@ body > input{
 
     100% {
         display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .slider{
+        display: grid;
+        grid-template-areas:
+        "slides slides"
+        "dots dots"
+        "text text";
+        gap: 2vw;
+        background-color: var(--bg-color);
+        align-items: center;
+        overflow: hidden;
+        border-radius: 3vmin;
+        box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.2) inset;
+        justify-items: center;
+    }
+
+    .text-wrapper{
+        justify-items: center;
+    }
+
+    .dots {
+        justify-self: center;
+    }
+
+    .dot {
+        width: 0.5rem;
+        height: 0.5rem;
     }
 }
