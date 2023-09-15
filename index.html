@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cssMemeSlider by z-e-a</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <h1>task cssMemSlider by <a href="https://github.com/z-e-a" target="_blank" rel="noopener noreferrer">z-e-a</a></h1>
     <input type="radio" class="radio-btn" name="switch" id="mem1" checked />
     <input type="radio" class="radio-btn" name="switch" id="mem2" />
     <input type="radio" class="radio-btn" name="switch" id="mem3" />
     <input type="radio" class="radio-btn" name="switch" id="mem4" />
-
-</body>
+    <div class="slider">
+      <div class="slider-wrapper">
+        <div class="slides-content">
+          <div class="slide">
+            <img src="img/slide1.jpg" alt="" />
+          </div>
+          <div class="slide">
+            <img src="img/slide2.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="img/slide3.jpg" alt="" />
+          </div>
+          <div class="slide">
+            <img src="img/slide4.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="text">
+        <div class="text-wrapper">
+          <div class="label">text1</div>
+          <div class="label">text2</div>
+          <div class="label">text3</div>
+          <div class="label">text4</div>
+        </div>
+      </div>
+      <div class="dots">
+        <label for="mem1"><div class="dot"></div></label>
+        <label for="mem2"><div class="dot"></div></label>
+        <label for="mem3"><div class="dot"></div></label>
+        <label for="mem4"><div class="dot"></div></label>
+      </div>
+    </div>
+  </body>
 </html>
